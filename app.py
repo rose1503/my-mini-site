@@ -2,9 +2,13 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/health")
+@app.route("/")
 def home():
-    return {"status":"ok"}, 200
+    return "<h1>Hello from my CI/CD website! Now updated 🚀</h1>"
+
+@app.route("/health")
+def health():
+    return {"status": "ok"}, 200
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=5000)
